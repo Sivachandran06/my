@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+    <!-- navgation   -->
+
+    <header>
+        <nav>
+            <a href="/Project/MovieDeck/index.html">
+                <h1>Movie Deck</h1>
+            </a>
+        </nav>
+
+    </header>
+
+    <!--  Search bar -->
+
+    <section id="search-bar" class=" search-bar">
+        <input type="search" name="search" id="search-input" placeholder="search by name" />
+        <button id="search-button"> Search</button>
+    </section>
+
+
+    <!-- Sorting optins -->
+
+    <div id="sorting-options" class="sorting-options">
+        <button class="sort-button" id="sort-by-date">Sort by Date</button>
+        <button class="sort-button" id="sort-by-rating">Sort by rating</button>
+    </div>
+
+    <!-- Tabs container -->
+
+    <div class="tabs">
+        <button id="all-tab" class="tab">All</button>
+        <button id="favourites-tab" class="tab">Favourites</button>
+    </div>
+
+    <!-- movie list and pagination button Container -->
+
+    <article class="movie-list-pagination-btns">
+
+        <!-- Movie list display -->
+        <div id="movie-list" class="movie-list">
+            <!-- JS will populate this -->
+        </div>
+
+
+        <!-- Pagination  -->
+        <div id="pagination" class="pagination">
+            <button id="prev-button" class="pagnation-btn">Prev</button>
+            <button id="page-number-button" class="pagnation-btn"> CurrentPage: 1</button>
+            <button id="next-button" class="pagnation-btn">Next</button>
+        </div>
+
+    </article>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <p> (c) 2024 Movie Deck</p>
+    </footer>
+
+
+
+    <script src="./index.js"> </script>
+</body>
+
+</html>

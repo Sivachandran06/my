@@ -1,0 +1,151 @@
+/* All the Pages inside the pporject */
+/* Why need all selector ????  */
+
+/* TODO: Borderbox vs contennt box */
+* {
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 0px;
+  
+    font-family: sans-serif;
+  }
+  
+  /* header  */
+  
+  header {
+    background-color: gray;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+  }
+  
+  header > nav > a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* Search  */
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+  }
+  
+  #search-input {
+    height: 30px;
+    width: 250px;
+  
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  
+  #search-button {
+    width: 100px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background-color: darkcyan;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* ---- Sort Option ---- */
+  
+  #sorting-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .sort-button {
+    width: 200px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* UI to indicate what sort option is selected */
+  
+  .sort-button-active {
+    border: 2px solid darkcyan;
+  }
+  
+  /* TABS */
+  
+  .active-tab {
+    border: 2px solid darkcyan;
+  }
+  
+  .tab {
+    width: 150px;
+    height: 32px;
+    /* border: none; */
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* Movie list pagination button  */
+  
+  .movie-list-pagination-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    padding: 10px;
+  }
+  
+  /* Card Layout */
+  
+  .card {
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .votes-favorites {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .movie-list {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .poster {
+    width: 200px;
+    height: 300px;
+  
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  /*  XXXXXXXXX------- card layouting end  */
+  
+  #pagination {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .pagnation-btn {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  /* footer */
+  
+  footer {
+    background-color: gray;
+    color: white;
+  }

@@ -5,6 +5,8 @@ import LifcycleofComponent from './6.LifeCycleOfReactComponent/LifeCycleofCompon
 import HooksUseEffect from './7.HooksUseEffect/HooksUseEffect';
 import { useState } from 'react';
 import PokemonApi from './8.PokemonApi/PokemonApi';
+import DigitalClock from './9.DigitalClock/DigitalClock';
+import CounterClassComponent from './10.ClassComponent/CounterClassComponent1';
 
 function App() {
   const [ flag , setFlag]=useState(true);
@@ -16,7 +18,9 @@ function App() {
       {/* {flag && <HooksUseEffect />} */}
       {/* <button onClick={()=>setFlag((oldval)=> !oldval)}> Click me to Clear All</button> */}
 
-      <PokemonApi />
+      {/* <PokemonApi /> */}
+      {/* <DigitalClock/> */}
+      <CounterClassComponent />
     </>
   );
 }

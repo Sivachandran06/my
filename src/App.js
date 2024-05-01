@@ -4,9 +4,11 @@ import MyForm from './components/MyForm';
 import LifcycleofComponent from './6.LifeCycleOfReactComponent/LifeCycleofComponent';
 import HooksUseEffect from './7.HooksUseEffect/HooksUseEffect';
 import { useState } from 'react';
-import PokemonApi from './8.PokemonApi/PokemonApi';
+//import PokemonApi from './8.PokemonApi/PokemonApi';
 import DigitalClock from './9.DigitalClock/DigitalClock';
 import CounterClassComponent from './10.ClassComponent/CounterClassComponent1';
+import HellowComonent from './10.ClassComponent/HellowComponent';
+import PokemonApi from './10.ClassComponent/PokemonAPI';
 
 function App() {
   const [ flag , setFlag]=useState(true);
@@ -20,7 +22,9 @@ function App() {
 
       {/* <PokemonApi /> */}
       {/* <DigitalClock/> */}
-      <CounterClassComponent />
+      {/* <CounterClassComponent /> */}
+      {/* <HellowComonent/> */}
+      <PokemonApi />
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Component } from "react";
 class CounterClassComponent extends Component{
     state={
         count : 0,
-        abcdezz: 1,
+        abcdezz: 10,
 
     };
     decrement(){

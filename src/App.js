@@ -9,7 +9,8 @@ import DigitalClock from './9.DigitalClock/DigitalClock';
 import CounterClassComponent from './10.ClassComponent/CounterClassComponent1';
 import HellowComonent from './10.ClassComponent/HellowComponent';
 import PokemonApi from './10.ClassComponent/PokemonAPI';
-
+import PokemonKingDom from './Component/PokemonKingDom';
+import FoodList from './Component/FoodList/foodList';
 function App() {
   const [ flag , setFlag]=useState(true);
   return (
@@ -24,7 +25,9 @@ function App() {
       {/* <DigitalClock/> */}
       {/* <CounterClassComponent /> */}
       {/* <HellowComonent/> */}
-      <PokemonApi />
+      {/* <PokemonApi /> */}
+      {/* <FoodList /> */}
+      <PokemonKingDom/>
     </>
   );
 }

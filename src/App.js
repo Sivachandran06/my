@@ -7,10 +7,11 @@ import { useState } from 'react';
 //import PokemonApi from './8.PokemonApi/PokemonApi';
 import DigitalClock from './9.DigitalClock/DigitalClock';
 import CounterClassComponent from './10.ClassComponent/CounterClassComponent1';
-import HellowComonent from './10.ClassComponent/HellowComponent';
+import HellowComonent from './10.ClassComponent/HellowComponentCopy';
 import PokemonApi from './10.ClassComponent/PokemonAPI';
 import PokemonKingDom from './Component/PokemonKingDom';
 import FoodList from './Component/FoodList/foodList';
+import HellowComponentCopy from './10.ClassComponent/HellowComponentCopy';
 function App() {
   const [ flag , setFlag]=useState(true);
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <HellowComonent/> */}
       {/* <PokemonApi /> */}
       {/* <FoodList /> */}
-      <PokemonKingDom/>
+      {/* <PokemonKingDom/> */}
+      {/* <HellowComponentCopy/> */}
     </>
   );
 }

@@ -25,7 +25,7 @@ function LifcycleofComponent(){
             }}>Click</button>
 
         </div>
-        </>
+        </> 
     )
 }
 

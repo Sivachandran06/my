@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-class HellowComonent extends Component{
+class HellowComponentCopy extends Component{
     state={
         count:0,
     };
@@ -40,4 +40,4 @@ class HellowComonent extends Component{
         )
     }
 }
-export default HellowComonent;
+export default HellowComponentCopy;

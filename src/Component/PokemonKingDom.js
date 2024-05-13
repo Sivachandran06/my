@@ -41,7 +41,7 @@ function PokemonKingDom(props) {
                 <>
                 <h1>Pokemon Kingdom</h1>
                 <div className="app-container">
-                    <div className={styles[card-container]}>
+                    <div className={styles}>
                     
                     {PokemonData.map(pokemon => (
                         <PokemonCardComponent 

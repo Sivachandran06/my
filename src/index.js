@@ -12,6 +12,8 @@ import MainComponent from './16.ContextHell/Component/MainComponent';
 import ContectHellApp from './16.ContextHell/ContextHellApp';
 import SimpleFormatingComponnent from './18.UseRef/1.SimpleFormatingComponnent/SimpleFormatingComponnent';
 import UnduMessage from './18.UseRef/2.useRefExample/UndoMessage';
+import EmployeeHerarchy from './0.InterviewQuestions/2.EmployeHirarchy/EmployeeHirarchy';
+import hirarchyDataStructure from'./0.InterviewQuestions/2.EmployeHirarchy/File';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,7 +31,8 @@ root.render(
     {/* <ContectHellApp /> */}
 
     {/* <SimpleFormatingComponnent /> */}
-    <UnduMessage />
+    {/* <UnduMessage /> */}
+    <EmployeeHerarchy data ={hirarchyDataStructure}/>
   </React.StrictMode>
 );
 

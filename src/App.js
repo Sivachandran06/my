@@ -12,6 +12,8 @@ import PokemonApi from './10.ClassComponent/PokemonAPI';
 import PokemonKingDom from './Component/PokemonKingDom';
 import FoodList from './Component/FoodList/foodList';
 import HellowComponentCopy from './10.ClassComponent/HellowComponentCopy';
+import EmployeeHerarchy from './0.InterviewQuestions/2.EmployeHirarchy/EmployeeHirarchy';
+import hirarchyDataStructure from './0.InterviewQuestions/2.EmployeHirarchy/File';
 function App() {
   const [ flag , setFlag]=useState(true);
   return (
@@ -30,6 +32,8 @@ function App() {
       {/* <FoodList /> */}
       {/* <PokemonKingDom/> */}
       {/* <HellowComponentCopy/> */}
+      <EmployeeHerarchy data ={hirarchyDataStructure} />
+      
         
 
 

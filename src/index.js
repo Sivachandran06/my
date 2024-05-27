@@ -14,6 +14,7 @@ import SimpleFormatingComponnent from './18.UseRef/1.SimpleFormatingComponnent/S
 import UnduMessage from './18.UseRef/2.useRefExample/UndoMessage';
 import EmployeeHerarchy from './0.InterviewQuestions/2.EmployeHirarchy/EmployeeHirarchy';
 import hirarchyDataStructure from'./0.InterviewQuestions/2.EmployeHirarchy/File';
+import MusicPlayBack from './25.ApplemusicProject/MusicPlayBack';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,7 +33,11 @@ root.render(
 
     {/* <SimpleFormatingComponnent /> */}
     {/* <UnduMessage /> */}
-    <EmployeeHerarchy data ={hirarchyDataStructure}/>
+    {/* <EmployeeHerarchy data ={hirarchyDataStructure}/> */}
+    <BrowserRouter >
+    <MusicPlayBack/>
+    
+    </BrowserRouter>
   </React.StrictMode>
 );
 

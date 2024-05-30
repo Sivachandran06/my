@@ -15,6 +15,7 @@ import UnduMessage from './18.UseRef/2.useRefExample/UndoMessage';
 import EmployeeHerarchy from './0.InterviewQuestions/2.EmployeHirarchy/EmployeeHirarchy';
 import hirarchyDataStructure from'./0.InterviewQuestions/2.EmployeHirarchy/File';
 import MusicPlayBack from './25.ApplemusicProject/MusicPlayBack';
+import UserProvider from './25.ApplemusicProject/src/provider/UseProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -35,8 +36,9 @@ root.render(
     {/* <UnduMessage /> */}
     {/* <EmployeeHerarchy data ={hirarchyDataStructure}/> */}
     <BrowserRouter >
-    <MusicPlayBack/>
-    
+      {/* <UserProvider> */}
+        <MusicPlayBack/>
+      {/* </UserProvider>  */}
     </BrowserRouter>
   </React.StrictMode>
 );

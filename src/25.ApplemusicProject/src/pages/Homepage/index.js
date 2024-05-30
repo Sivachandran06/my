@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../../component/CommonUI/Loader/Loading";
 
 
 function Homepage(){
@@ -39,7 +40,7 @@ function Homepage(){
         <>
             <h1>Homepage</h1>
             {isLoading ? (
-            <div>Loading...</div>
+            <div><Loading /></div>
          ) : (
             <section>
                 {MusicList.map((music, index) => {

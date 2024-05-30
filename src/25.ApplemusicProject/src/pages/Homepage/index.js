@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import Loading from "../../component/CommonUI/Loader/Loading";
+import MusicPlayer from "../../component/Music/MusicPlayer";
 
 
 function Homepage(){
     const [MusicList, setMusicList] =useState([]);
     const [isLoading , setIsLoading] =useState(false);
-    console.log(MusicList, "musiclist");
+
+    const [seclectedMusic, setSeclectedMusic] =useState({
+        _id:"",
+        title:"",
+        audio_url:"",
+        thumbnail:""
+    });
     
+
+    console.log(MusicList, "musiclist");
     useEffect(()=>{
         async function fechSong(){
             setIsLoading(true);
@@ -43,12 +52,27 @@ function Homepage(){
             <div><Loading /></div>
          ) : (
             <section>
-                {MusicList.map((music, index) => {
-                    const { title } = music;
-                    return <div key={index}>{title}</div>;
+                {MusicList.map((music) => {
+                    const { title ,_id, audio_url, thumbnail} = music;
+                    return <div onClick={()=>setSeclectedMusic({
+                        _id,
+                        title,
+                        audio_url,
+                        thumbnail,
+                    })}
+                    >
+                        {title} -{_id}
+                    </div>;
                 })}
             </section>
              )}
+             {seclectedMusic && 
+             <MusicPlayer 
+             _id={seclectedMusic._id} 
+             title={seclectedMusic.title} 
+             audio_url={seclectedMusic.audio_url} 
+             thumbnail={seclectedMusic.thumbnail} 
+             />}
         </>
     )
 }

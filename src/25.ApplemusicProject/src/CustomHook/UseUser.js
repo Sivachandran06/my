@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import React from "react";
+import { UserContext } from "../provider/UseProvider";
 
 
-function Useuser(){
+function UseUser (){
 
     return useContext(UserContext);
 }
 
-export default Useuser;
+export default UseUser;

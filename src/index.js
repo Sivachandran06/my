@@ -16,6 +16,7 @@ import EmployeeHerarchy from './0.InterviewQuestions/2.EmployeHirarchy/EmployeeH
 import hirarchyDataStructure from'./0.InterviewQuestions/2.EmployeHirarchy/File';
 import MusicPlayBack from './25.ApplemusicProject/MusicPlayBack';
 import UserProvider from './25.ApplemusicProject/src/provider/UseProvider';
+import NavBar from './25.ApplemusicProject/src/component/NavBar/NavBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,9 +37,11 @@ root.render(
     {/* <UnduMessage /> */}
     {/* <EmployeeHerarchy data ={hirarchyDataStructure}/> */}
     <BrowserRouter >
-      {/* <UserProvider> */}
-        <MusicPlayBack/>
-      {/* </UserProvider>  */}
+     
+       <UserProvider>
+        <NavBar/>
+         <MusicPlayBack/>
+      </UserProvider> 
     </BrowserRouter>
   </React.StrictMode>
 );

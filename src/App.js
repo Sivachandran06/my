@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import MyForm from './components/MyForm';
+import MyForm from './TRY/components/MyForm';
 import LifcycleofComponent from './6.LifeCycleOfReactComponent/LifeCycleofComponent';
 import HooksUseEffect from './7.HooksUseEffect/HooksUseEffect';
 import { useState } from 'react';

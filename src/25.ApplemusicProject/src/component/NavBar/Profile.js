@@ -1,13 +1,18 @@
-import { defer } from "react-router-dom"
+import { defer, useNavigate } from "react-router-dom"
+import UseUser from "../../CustomHook/UseUser";
 
 
 
 function Profil(){
-
+const {getToken , logout}= UseUser();
+const Navigate = useNavigate();
 
     return(
         <>
-        <h1>Profil</h1>
+
+        { !getToken && <button onClick={()=>{Navigate("/login")}}>Login</button>}
+        {getToken && <button onClick={()=>{logout ()}}>LogOut</button>}
+        
         </>
     )
 }

@@ -1,43 +1,45 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 export const UserContext = React.createContext({
- getToken :"",
- getName:"",
- nameHandler:() =>{},
- tokenHandler:() =>{}
+    getToken: "",
+    getName: "",
+    nameHandler: () => {},
+    tokenHandler: () => {},
+    logout: () => {}
 });
 
-const UserProvider = (props) =>{
-    const[getName ,setName] =useState(()=>{
-        localStorage.getItem("name");
-    });
-    const[getToken , setToken] = useState(()=>{
-        localStorage.getItem("token");
-    });
+const UserProvider = ({ children }) => {
+    const [getName, setName] = useState(localStorage.getItem("name"));
+    const [getToken, setToken] = useState(localStorage.getItem("token"));
 
-    console.log(getName , getToken ,"USER PROVIDER");
-    const { Childern } = props;
+    console.log(getName, getToken, "USER PROVIDER");
 
-    function Namehandeler(name){
+    function NameHandler(name) {
         setName(name);
         localStorage.setItem("name", name);
     }
-    function TokenHandeler(token){
+
+    function TokenHandler(token) {
         setToken(token);
-        localStorage.setItem("token" , token);
+        localStorage.setItem("token", token);
     }
 
     const valObj = {
         getName,
         getToken,
-    }
-    return(
-        <>
-        <UserContext.Provider value={valObj}>{ Childern}</UserContext.Provider>
-        </>
-        
-    );
+        tokenHandler: TokenHandler,
+        nameHandler: NameHandler,
+        logout
+    };
 
+    function logout() {
+        setName("");
+        setToken("");
+    }
+
+    return (
+        <UserContext.Provider value={valObj}>{children}</UserContext.Provider>
+    );
 };
 
 export default UserProvider;

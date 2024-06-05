@@ -9,10 +9,12 @@ export const UserContext = React.createContext({
 });
 
 const UserProvider = ({ children }) => {
-    const [getName, setName] = useState(localStorage.getItem("name"));
-    const [getToken, setToken] = useState(localStorage.getItem("token"));
+    const [getName, setName] = useState("");
+    const [getToken, setToken] = useState("");
 
     console.log(getName, getToken, "USER PROVIDER");
+
+    //const {children }= props; to do 
 
     function NameHandler(name) {
         setName(name);

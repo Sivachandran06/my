@@ -14,7 +14,7 @@ function NavBar(){
 
         <ul>
             <li>
-                <NavLink to ={"/home"}>HOME</NavLink>
+                <NavLink to ={"/"}>HOME</NavLink>
             </li>
             <li>
                 <NavLink to ={"/social"}>SOCIAL</NavLink>

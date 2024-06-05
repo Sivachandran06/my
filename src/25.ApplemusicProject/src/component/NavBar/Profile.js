@@ -11,10 +11,10 @@ const Navigate = useNavigate();
         <>
 
         { !getToken && <button onClick={()=>{Navigate("/login")}}>Login</button>}
-        {getToken && <button onClick={()=>{logout ()}}>LogOut</button>}
+        {getToken && <button onClick={()=>{logout (); Navigate("/")}}>LogOut</button>}
         
         </>
     )
-}
+}  
 
 export default Profil;

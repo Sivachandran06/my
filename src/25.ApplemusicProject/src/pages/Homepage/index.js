@@ -1,16 +1,48 @@
 import { useEffect, useState } from "react";
 import Loading from "../../component/CommonUI/Loader/Loading";
 import MusicPlayer from "../../component/Music/MusicPlayer";
+import UseUser from "../../CustomHook/UseUser";
 
 function Homepage() {
     const [musicList, setMusicList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [ favSongList, setFavSongList] = useState([]);
+
     const [selectedMusic, setSelectedMusic] = useState({
         _id: "",
         title: "",
         audio_url: "",
-        thumbnail: ""
+        thumbnail: "",
     });
+
+    const IsfavSong =  favSongList.filter(item => item._id===selectedMusic._id).length;
+
+    
+    console.log(IsfavSong,"IsfavSong", favSongList);
+
+    const {getToken}= UseUser();
+    useEffect(()=>{
+        async function getFavList(){
+            const url = "https://academics.newtonschool.co/api/v1/music/favorites/like";
+            const myHeaders = new Headers();
+            myHeaders.append("projectID", "v6vl3jr9l35a");
+            myHeaders.append("Authorization", `Bearer ${getToken} `);
+            myHeaders.append("Content-Type", "application/json");
+            
+
+            const requestOptions = {
+            method: "GET",
+            headers: myHeaders,
+            redirect: "follow"
+            };
+
+            const responce = await fetch(url, requestOptions);
+            const data = await responce.json();
+            const songs = data?.data?.songs;
+            setFavSongList(songs);
+        }
+        getFavList();
+    },[])
 
     useEffect(() => {
         async function fetchSong() {
@@ -68,6 +100,7 @@ function Homepage() {
                     title={selectedMusic.title}
                     audio_url={selectedMusic.audio_url}
                     thumbnail={selectedMusic.thumbnail}
+                    isFav ={!IsfavSong}
                 />
             )}
         </>

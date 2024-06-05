@@ -5,11 +5,36 @@ import UseUser from "../../CustomHook/UseUser";
 
 
 function MusicPlayer(props){
-    const{_id,title, audio_url, thumbnail } =props;
-    const ContextData = UseUser();
-    const {getToken} = useContext(UseUser);
+    const{_id,title, audio_url, thumbnail ,isFav: isFaveFromAPI } =props;
+    const getToken = useContext(UseUser);
 
-    const IsfavSong = true;
+    const[isFav , setIsFav] = useState(isFaveFromAPI);
+
+    async function MakingFav() {
+        const url ="https://academics.newtonschool.co/api/v1/music/favorites/like";
+        const myHeaders = new Headers();
+        myHeaders.append("projectID", "v6vl3jr9l35a");
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", `Bearer ${getToken} `);
+
+
+        console.log(isFav);
+        const raw = JSON.stringify({
+        songId: _id,
+        });
+
+        const requestOptions = {
+        method: "PATCH",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+        };
+
+        const response = await fetch( url, requestOptions);
+        const data = await response.json();
+        console.log(data, "fav data");
+
+    }
     return(
         <>
         <div className="music_player" id={_id}>
@@ -18,11 +43,20 @@ function MusicPlayer(props){
                 <audio controls src={audio_url}></audio>
 
                 
-                {getToken && IsfavSong ? (
-                <i className="fa-regular fa-heart"></i>
+                {getToken || 
+                (!isFav ? (
+                <i style={{cursor:"pointer"}} 
+                onClick={()=>{
+                    MakingFav ();
+                    setIsFav(true);
+                 }} className="fa-regular fa-heart"></i>
             ) : (
-                <i className="fa-solid fa-heart"></i>
-            )}
+                <i style={{cursor:"pointer"}} 
+                onClick={()=>{
+                    MakingFav();
+                    setIsFav(false);
+                }} className="fa-solid fa-heart"></i>
+            ))}
             </div>
 
         </>
